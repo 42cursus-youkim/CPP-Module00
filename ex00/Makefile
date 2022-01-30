@@ -9,13 +9,16 @@ OBJ := $(SRC:%.cpp=%.o)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $^
 
 run: $(NAME)
+	./$(NAME)
+
+test: $(NAME)
 	python3 test.py
 
 clean:
 	rm -f *.o
 	rm -f $(NAME)
 
-.PHONY: all clean
+.PHONY: all run test clean
