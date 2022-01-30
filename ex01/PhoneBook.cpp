@@ -39,20 +39,24 @@ void PhoneBook::formattedCell(string str) {
   string cell;
 
   if (str.length() > 10)
-    cell = str.substr(0, 10) + '.';
+    cell = str.substr(0, FIELD_WIDTH - 1) + '.';
   else
     cell = str;
-  cout << std::setw(10) << cell << "|";
+  cout << std::setw(FIELD_WIDTH) << cell << "|";
 }
 
 void PhoneBook::printContact(size_t index) {
   Contact& contact = _contacts[index];
+  std::stringstream ss;
+  string indexStr;
 
+  ss << index;
+  ss >> indexStr;
+
+  formattedCell(indexStr);
   formattedCell(contact.m_firstName);
   formattedCell(contact.m_lastName);
   formattedCell(contact.m_nickname);
-  formattedCell(contact.m_phoneNumber);
-  formattedCell(contact.m_darkestSecret);
   cout << endl;
 }
 

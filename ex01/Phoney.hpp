@@ -13,6 +13,7 @@ using std::ostream;
 using std::string;
 
 const size_t MAX_CONTACTS = 8;
+const size_t FIELD_WIDTH = 10;
 
 class Contact {
  public:
