@@ -1,8 +1,12 @@
 #include <iostream>
 #include <string>
 
-std::string toUpper(std::string str) {
-  std::string res = str;
+using std::cout;
+using std::endl;
+using std::string;
+
+string toUpper(string str) {
+  string res = str;
 
   for (unsigned i = 0; i < str.length(); i++) {
     res[i] = std::toupper(str[i]);
@@ -12,11 +16,11 @@ std::string toUpper(std::string str) {
 
 int main(int argc, char* argv[]) {
   if (argc == 1) {
-    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+    cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
   } else {
     for (int i = 1; i < argc; i++)
-      std::cout << toUpper(argv[i]);
+      cout << toUpper(argv[i]);
   }
-  std::cout << std::endl;
+  cout << endl;
   return (0);
 }
