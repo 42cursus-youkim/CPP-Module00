@@ -39,7 +39,10 @@ class PhoneBook {
   ~PhoneBook();
   void addContact(void);
   Contact& operator[](size_t index);
+  const Contact& operator[](size_t index) const;
   // void printContact(void);
   // void searchContact(string name);
   // void printContacts();
 };
+
+ostream& operator<<(ostream& os, const PhoneBook& phoneBook);

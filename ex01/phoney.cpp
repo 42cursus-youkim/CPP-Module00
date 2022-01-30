@@ -4,7 +4,8 @@ int main(void) {
   PhoneBook phoneBook;
 
   phoneBook.addContact();
-  cout << phoneBook[0] << endl;
+  // cout << phoneBook[0] << endl;
+  cout << phoneBook << endl;
   // Contact contact1("John", "Doe", "JD", "0123456789", "My dark secret");
   // cout << contact1 << endl;
   // string input;

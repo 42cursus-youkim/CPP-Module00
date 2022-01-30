@@ -26,3 +26,15 @@ void PhoneBook::addContact(void) {
 Contact& PhoneBook::operator[](size_t index) {
   return _contacts[index];
 }
+
+const Contact& PhoneBook::operator[](size_t index) const {
+  return _contacts[index];
+}
+
+ostream& operator<<(ostream& os, const PhoneBook& phoneBook) {
+  for (size_t i = 0; i < MAX_CONTACTS; i++) {
+    os << phoneBook[i];
+  }
+  os << endl;
+  return os;
+}
