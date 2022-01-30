@@ -3,12 +3,15 @@
 #include <iostream>
 #include <string>
 
+using std::cin;
 using std::cout;
 using std::endl;
 using std::ostream;
 using std::string;
 
-struct Contact {
+const size_t MAX_CONTACTS = 8;
+
+class Contact {
  public:
   string m_firstName;
   string m_lastName;
@@ -16,6 +19,7 @@ struct Contact {
   string m_phoneNumber;
   string m_darkestSecret;
 
+  Contact();
   Contact(string firstName,
           string lastName,
           string nickname,
@@ -23,15 +27,19 @@ struct Contact {
           string darkestSecret);
 };
 
+ostream& operator<<(ostream& os, const Contact& contact);
+
 class PhoneBook {
  private:
-  Contact _contacts[8];
+  Contact _contacts[MAX_CONTACTS];
   size_t m_size;
 
  public:
   PhoneBook();
   ~PhoneBook();
-  void addContact(Contact contact);
-  void searchContact(string name);
-  void printContacts();
+  void addContact(void);
+  Contact& operator[](size_t index);
+  // void printContact(void);
+  // void searchContact(string name);
+  // void printContacts();
 };
