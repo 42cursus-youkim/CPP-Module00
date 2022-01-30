@@ -20,10 +20,10 @@ Contact::Contact(string firstName,
 };
 
 ostream& operator<<(ostream& os, const Contact& contact) {
-  os << "First name: " << contact.m_firstName << " ";
-  os << "Last name: " << contact.m_lastName << " ";
-  os << "Nickname: " << contact.m_nickname << " ";
-  os << "Phone number: " << contact.m_phoneNumber << " ";
-  os << "Darkest secret: " << contact.m_darkestSecret << endl;
+  os << contact.m_firstName << " ";
+  os << contact.m_lastName << " ";
+  os << contact.m_nickname << " ";
+  os << contact.m_phoneNumber << " ";
+  os << contact.m_darkestSecret << endl;
   return os;
 }

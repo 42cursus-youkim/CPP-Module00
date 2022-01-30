@@ -1,19 +1,24 @@
 #include "Phoney.hpp"
 
+
+
 int main(void) {
   PhoneBook phoneBook;
 
   phoneBook.addContact();
-  // cout << phoneBook[0] << endl;
-  cout << phoneBook << endl;
-  // Contact contact1("John", "Doe", "JD", "0123456789", "My dark secret");
-  // cout << contact1 << endl;
-  // string input;
+  phoneBook.printContacts();
+  // Contact example("John", "Doe", "Johnny", "555-555-5555", "I am the best");
+  // cout << example << endl;
+  // phoneBook.addContact();
+  // cout << phoneBook << endl;
 
+  // string input;
   // while (true) {
-  //   std::cout << "Enter command: ADD, SEARCH, EXIT" << std::endl;
-  //   std::cin >> input;
+  //   cout << "Enter command: ADD, SEARCH, EXIT" << endl;
+  //   std::getline(cin, input);
   //   if (input == "ADD") {
+  //     phoneBook.addContact();
+  //     cout << phoneBook << endl;
   //   } else if (input == "SEARCH") {
   //   } else if (input == "EXIT") {
   //     break;

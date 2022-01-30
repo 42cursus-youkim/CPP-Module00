@@ -1,11 +1,14 @@
 #pragma once
 
+#include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <string>
 
 using std::cin;
 using std::cout;
 using std::endl;
+
 using std::ostream;
 using std::string;
 
@@ -31,18 +34,23 @@ ostream& operator<<(ostream& os, const Contact& contact);
 
 class PhoneBook {
  private:
+  size_t m_current;
   Contact _contacts[MAX_CONTACTS];
-  size_t m_size;
+
+  void editContact(size_t index);
+  // Contact& operator[](size_t index);
+  void formattedCell(string str);
+  void printContact(size_t index);
 
  public:
   PhoneBook();
   ~PhoneBook();
   void addContact(void);
-  Contact& operator[](size_t index);
-  const Contact& operator[](size_t index) const;
-  // void printContact(void);
+  string formattedLine(size_t index);
+  // const Contact& operator[](size_t index) const;
+  void printContacts(void);
   // void searchContact(string name);
   // void printContacts();
 };
 
-ostream& operator<<(ostream& os, const PhoneBook& phoneBook);
+// ostream& operator<<(ostream& os, const PhoneBook& phoneBook);
