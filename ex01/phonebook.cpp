@@ -2,17 +2,16 @@
 
 ostream& operator<<(ostream& os, const Contact& contact) {
   os << "First name: " << contact.m_firstName << " ";
-  // os << "Last name: " << contact.m_lastName << " ";
-  // os << "Nickname: " << contact.m_nickname << " ";
-  // os << "Phone number: " << contact.m_phoneNumber << " ";
-  // os << "Darkest secret: " << contact.m_darkestSecret << endl;
+  os << "Last name: " << contact.m_lastName << " ";
+  os << "Nickname: " << contact.m_nickname << " ";
+  os << "Phone number: " << contact.m_phoneNumber << " ";
+  os << "Darkest secret: " << contact.m_darkestSecret << endl;
   return os;
 }
 
 int main(void) {
   Contact contact1("John", "Doe", "JD", "0123456789", "My dark secret");
-  cout << contact1.m_firstName << endl;
-  // cout << contact1 << endl;
+  cout << contact1 << endl;
   // string input;
 
   // while (true) {
