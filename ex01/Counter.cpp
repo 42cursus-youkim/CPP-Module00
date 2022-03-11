@@ -6,6 +6,12 @@ void CycleCounter::increment() {
     m_value = 0;
 }
 
-size_t CycleCounter::getValue() {
+size_t CycleCounter::getValue() const {
   return m_value;
 }
+
+size_t CycleCounter::getCycleSize() const
+{
+  return m_cycle_size;
+}
+    
