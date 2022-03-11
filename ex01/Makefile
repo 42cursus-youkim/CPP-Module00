@@ -14,9 +14,6 @@ $(NAME): $(OBJ)
 run: $(NAME)
 	./$(NAME)
 
-test: $(NAME)
-	python3 test.py
-
 clean:
 	rm -f *.o
 	rm -f $(NAME)

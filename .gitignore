@@ -2,6 +2,10 @@
 megaphone
 phonebook
 
+# tests
+*.txt
+ex01-old
+
 # Prerequisites
 *.d
 

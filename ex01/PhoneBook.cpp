@@ -1,83 +1,14 @@
-#include "Phoney.hpp"
+#include "entry.hpp"
+// #include "PhoneBook.hpp"
+#include <iostream>
+using std::cout;
+using std::endl;
 
-PhoneBook::PhoneBook() {
-  m_current = 0;
+int main(void) {
+  Entry entry = {"John", "Doe", "Johnny", "555-555-5555", "I am the best"};
+  cout << entry.firstName << endl;
+  cout << entry.lastName << endl;
+  cout << entry.nickname << endl;
+  cout << entry.phoneNumber << endl;
+  cout << entry.darkestSecret << endl;
 }
-
-PhoneBook::~PhoneBook() {
-  cout << "Byeeeeee" << endl;
-}
-
-void PhoneBook::editContact(size_t index) {
-  Contact& contact = _contacts[index];
-  cout << "Enter first name: " << endl;
-  std::getline(cin, contact.m_firstName);
-  cout << "Enter last name: " << endl;
-  std::getline(cin, contact.m_lastName);
-  cout << "Enter nickname: " << endl;
-  std::getline(cin, contact.m_nickname);
-  cout << "Enter phone number: " << endl;
-  std::getline(cin, contact.m_phoneNumber);
-  cout << "Enter darkest secret: " << endl;
-  std::getline(cin, contact.m_darkestSecret);
-}
-
-void PhoneBook::addContact(void) {
-  editContact(m_current++);
-  if (m_current == MAX_CONTACTS)
-    m_current = 0;
-}
-
-// Contact& PhoneBook::operator[](size_t index) {
-//   return _contacts[index];
-// }
-
-// const Contact& PhoneBook::operator[](size_t index) const {
-//   return _contacts[index];
-// }
-void PhoneBook::formattedCell(string str) {
-  string cell;
-
-  if (str.length() > 10)
-    cell = str.substr(0, FIELD_WIDTH - 1) + '.';
-  else
-    cell = str;
-  cout << std::setw(FIELD_WIDTH) << cell << "|";
-}
-
-void PhoneBook::printContact(size_t index) {
-  Contact& contact = _contacts[index];
-  std::stringstream ss;
-  string indexStr;
-
-  ss << index;
-  ss >> indexStr;
-
-  formattedCell(indexStr);
-  formattedCell(contact.m_firstName);
-  formattedCell(contact.m_lastName);
-  formattedCell(contact.m_nickname);
-  cout << endl;
-}
-
-void PhoneBook::printContacts(void) {
-  // formattedCell("first name");
-  // formattedCell("last name");
-  // formattedCell("nickname");
-  // formattedCell("telephone");
-  // formattedCell("D. Secret");
-  // cout << endl;
-  // cout << std::setfill('-') << std::setw(55) << "";
-  // cout << std::setfill(' ') << endl;
-
-  for (size_t i = 0; i < m_current; i++)
-    printContact(i);
-}
-
-// ostream& operator<<(ostream& os, const PhoneBook& phoneBook) {
-//   for (size_t i = 0; i < MAX_CONTACTS; i++) {
-//     os << phoneBook.formattedLine(i);
-//   }
-//   os << endl;
-//   return os;
-// }
