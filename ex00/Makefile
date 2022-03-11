@@ -5,6 +5,8 @@ CFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC := megaphone.cpp
 OBJ := $(SRC:%.cpp=%.o)
 
+.PHONY: all run test clean
+
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -14,11 +16,6 @@ $(NAME): $(OBJ)
 run: $(NAME)
 	./$(NAME)
 
-test: $(NAME)
-	python3 test.py
-
 clean:
 	rm -f *.o
 	rm -f $(NAME)
-
-.PHONY: all run test clean
