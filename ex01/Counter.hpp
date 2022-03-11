@@ -3,14 +3,14 @@
 
 #include <iostream>
 
-class Counter {
+class CycleCounter {
  private:
   size_t m_value;
-  size_t m_max_value;
+  size_t m_cycle_size;
 
  public:
-  Counter(size_t& counter, const size_t max_value)
-      : m_value(counter), m_max_value(max_value){};
+  CycleCounter(const size_t cycle_size)
+      : m_value(0), m_cycle_size(cycle_size){};
   void increment();
   size_t getValue();
 };
