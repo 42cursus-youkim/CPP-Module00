@@ -10,8 +10,10 @@ size_t CycleCounter::getValue() const {
   return m_value;
 }
 
-size_t CycleCounter::getCycleSize() const
-{
+size_t CycleCounter::getCycleSize() const {
   return m_cycle_size;
 }
-    
+
+bool CycleCounter::indexInRange(const size_t index) const {
+  return index < getCycleSize();
+}

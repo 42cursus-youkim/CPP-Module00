@@ -1,21 +1,16 @@
 #include "PhoneBook.hpp"
+#include <stdexcept>
 
 void PhoneBook::addContact(Contact entry) {
   const size_t index = m_counter.getValue();
 
-  m_entry[index] = entry;
+  m_contacts[index] = entry;
   m_counter.increment();
 }
 
-void PhoneBook::printEntryAt(const size_t index) const {
-  const Contact entry = m_entry[index];
+Contact& PhoneBook::getContactAt(const size_t index) {
+  if (not m_counter.indexInRange(index))
+    throw std::out_of_range("Index out of range");
 
-  cout << entry.firstName << " " << entry.lastName << " " << entry.nickname
-       << " " << entry.phoneNumber << " " << entry.darkestSecret << endl;
-}
-
-void PhoneBook::printContact() const {
-  for (size_t i = 0; i < m_counter.getCycleSize(); i++) {
-    printEntryAt(i);
-  }
+  return m_contacts[index];
 }
