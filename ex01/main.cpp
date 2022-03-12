@@ -23,16 +23,17 @@ int main(void) {
       case SEARCH:
         book.printContacts();
         cout << "Enter index to search: ";
-        int index;
-        cin >> index;
-        if (cin.eof())
-          return (EXIT_FAILURE);
-        else if (cin.fail()) {
-          cout << "Invalid input\n";
+        size_t index;
+        try {
+          index = getIndexInput();
           clearCin();
+        } catch (std::out_of_range& e) {
+          clearCin();
+          cout << "Invalid index\n";
           break;
+        } catch (std::runtime_error& e) {
+          return EXIT_FAILURE;
         }
-        clearCin();
         try {
           book.getContactAt(index).print();
         } catch (std::out_of_range& e) {

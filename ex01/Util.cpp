@@ -52,3 +52,15 @@ void clearCin() {
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
+
+size_t getIndexInput() {
+  size_t index;
+  std::cin >> index;
+
+  if (std::cin.eof())
+    throw std::runtime_error("EOF");
+  else if (std::cin.fail()) {
+    throw std::out_of_range("Invalid index");
+  }
+  return index;
+}

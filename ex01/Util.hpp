@@ -19,5 +19,6 @@ string stringTransform(const string& str, charFunc func);
 string truncateColumn(const size_t size, const string& column);
 string size_to_string(const size_t size);
 command parseCommand(const string& str);
-void  clearCin();
+void clearCin();
+size_t getIndexInput();
 #endif  // __UTIL_H__
