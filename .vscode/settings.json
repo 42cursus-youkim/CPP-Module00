@@ -12,6 +12,7 @@
     "*.njk": "nunjucks",
     "**/templates/**/*": "django-txt",
     "*.pug": "jade",
+    "*.list": "properties",
     "string": "cpp",
     "array": "cpp",
     "atomic": "cpp",
@@ -67,6 +68,11 @@
     "cinttypes": "cpp",
     "typeinfo": "cpp",
     "iomanip": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "bitset": "cpp",
+    "ranges": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "queue": "cpp"
   }
 }

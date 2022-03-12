@@ -7,6 +7,9 @@
 using std::string;
 
 class Contact {
+ private:
+  void printRow(const size_t length, const string columns[]) const;
+
  public:
   string m_firstName;
   string m_lastName;
@@ -15,6 +18,7 @@ class Contact {
   string m_darkestSecret;
 
   bool isValid() const;
+  void printHeader() const;
   void printSimple() const;
   void printFull() const;
 };

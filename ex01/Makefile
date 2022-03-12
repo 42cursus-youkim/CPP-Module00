@@ -14,8 +14,9 @@ $(NAME): $(OBJ)
 run: $(NAME)
 	./$(NAME)
 
+re: clean $(NAME)
+
 clean:
-	rm -f *.o
-	rm -f $(NAME)
+	rm -f *.o $(NAME)
 
 .PHONY: all run test clean
