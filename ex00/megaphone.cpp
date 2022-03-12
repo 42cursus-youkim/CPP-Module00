@@ -5,11 +5,13 @@ using std::cout;
 using std::endl;
 using std::string;
 
-string toUpper(string str) {
+typedef int (*charFunc)(int);
+
+string stringTransform(const string& str, charFunc func) {
   string res = str;
 
   for (unsigned i = 0; i < str.length(); i++) {
-    res[i] = std::toupper(str[i]);
+    res[i] = func(str[i]);
   }
   return res;
 }
@@ -19,8 +21,8 @@ int main(int argc, char* argv[]) {
     cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
   } else {
     for (int i = 1; i < argc; i++)
-      cout << toUpper(argv[i]);
+      cout << stringTransform(argv[i], std::toupper);
   }
-  cout << endl;
+  cout << "\n";
   return (0);
 }
