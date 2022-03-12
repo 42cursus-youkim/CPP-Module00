@@ -12,6 +12,8 @@ using std::cout;
 const size_t NUM_COLUMNS = 3;
 const size_t MAX_COLUMN_LENGTH = 10;
 
+PhoneBook::PhoneBook() : m_counter(CONTACT_SIZE) {}
+
 void PhoneBook::addContact(Contact entry) {
   const size_t index = m_counter.getValue();
 

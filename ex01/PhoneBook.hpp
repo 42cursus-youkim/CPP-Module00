@@ -17,7 +17,7 @@ class PhoneBook {
   void printHeader() const;
 
  public:
-  PhoneBook() : m_counter(CONTACT_SIZE){};
+  PhoneBook();
   void addContactFromInput();
   Contact& getContactAt(const size_t index);
   void printContacts() const;

@@ -5,7 +5,7 @@ test
 
 # tests
 *.txt
-ex01-old
+*.log
 
 # Prerequisites
 *.d

@@ -1,5 +1,8 @@
 #include "Counter.hpp"
 
+CycleCounter::CycleCounter(const size_t cycle_size)
+    : m_value(0), m_cycle_size(cycle_size) {}
+
 void CycleCounter::increment() {
   m_value++;
   if (m_value == m_cycle_size)
