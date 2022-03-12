@@ -9,6 +9,9 @@
 using std::cin;
 using std::cout;
 
+const size_t NUM_COLUMNS = 3;
+const size_t MAX_COLUMN_LENGTH = 10;
+
 void PhoneBook::addContact(Contact entry) {
   const size_t index = m_counter.getValue();
 

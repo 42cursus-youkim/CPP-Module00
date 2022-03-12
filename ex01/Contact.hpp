@@ -6,9 +6,6 @@
 
 using std::string;
 
-const size_t NUM_ELEMENTS = 5;
-const size_t NUM_COLUMNS = 3;
-const size_t MAX_COLUMN_LENGTH = 10;
 const string names[] = {"First Name", "Last Name", "Nickname", "Phone Number",
                         "Darkest Secret"};
 

@@ -5,12 +5,12 @@
 
 using std::cout;
 
+const size_t NUM_ELEMENTS = 5;
+
 bool Contact::isValid() const {
   return !m_firstName.empty() && !m_lastName.empty() && !m_nickname.empty() &&
          !m_phoneNumber.empty() && !m_darkestSecret.empty();
 }
-
-
 
 void Contact::print() const {
   if (not isValid())
