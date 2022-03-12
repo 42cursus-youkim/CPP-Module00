@@ -47,34 +47,37 @@ Contact& PhoneBook::getContactAt(const size_t index) {
   return contact;
 }
 
-void PhoneBook::printHeader() {
-  cout << std::setw(MAX_COLUMN_LENGTH) << "Index"
-       << "|";
+void PhoneBook::printHeader() const {
+  printCell("Index");
   for (size_t i = 0; i < NUM_COLUMNS - 1; i++)
-    cout << std::setw(MAX_COLUMN_LENGTH)
-         << truncateColumn(MAX_COLUMN_LENGTH, names[i]) << "|";
-  cout << std::setw(MAX_COLUMN_LENGTH)
-       << truncateColumn(MAX_COLUMN_LENGTH, names[NUM_COLUMNS - 1]) << "\n";
+    printCell(names[i]);
+  printCellLast(names[NUM_COLUMNS - 1]);
 }
 
-void PhoneBook::printRow(const size_t index,
-                         const size_t size,
-                         const string columns[]) const {
-  cout << std::setw(MAX_COLUMN_LENGTH) << index << "|";
-  for (size_t i = 0; i < size - 1; i++)
-    cout << std::setw(MAX_COLUMN_LENGTH)
-         << truncateColumn(MAX_COLUMN_LENGTH, columns[i]) << "|";
+void PhoneBook::printCell(const string& cell) const {
   cout << std::setw(MAX_COLUMN_LENGTH)
-       << truncateColumn(MAX_COLUMN_LENGTH, columns[size - 1]) << "\n";
+       << truncateColumn(MAX_COLUMN_LENGTH, cell) << "|";
+}
+
+void PhoneBook::printCellLast(const string& cell) const {
+  cout << std::setw(MAX_COLUMN_LENGTH)
+       << truncateColumn(MAX_COLUMN_LENGTH, cell) << "\n";
+}
+
+void PhoneBook::printRow(const size_t index, const Contact& contact) const {
+  const string columns[] = {contact.m_firstName, contact.m_lastName,
+                            contact.m_nickname};
+  printCell(size_to_string(index));
+  for (size_t i = 0; i < NUM_COLUMNS - 1; i++)
+    printCell(columns[i]);
+  printCellLast(columns[NUM_COLUMNS - 1]);
 }
 
 void PhoneBook::printContacts() const {
-  PhoneBook::printHeader();
+  printHeader();
   for (size_t i = 0; i < CONTACT_SIZE; i++) {
     const Contact& contact = m_contacts[i];
-    const string arr[] = {contact.m_firstName, contact.m_lastName,
-                          contact.m_nickname};
     if (contact.isValid())
-      printRow(i, NUM_COLUMNS, arr);
+      printRow(i, contact);
   }
 }

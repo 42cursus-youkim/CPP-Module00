@@ -11,12 +11,12 @@ class PhoneBook {
   CycleCounter m_counter;
   Contact m_contacts[CONTACT_SIZE];
 
-  void printRow(const size_t index,
-                const size_t size,
-                const string columns[]) const;
+  void printCell(const string& cell) const;
+  void printCellLast(const string& cell) const;
+  void printRow(const size_t index, const Contact& contact) const;
+  void printHeader() const;
 
  public:
-  static void printHeader();
   PhoneBook() : m_counter(CONTACT_SIZE){};
   void addContactFromInput();
   Contact& getContactAt(const size_t index);

@@ -1,6 +1,7 @@
 #include "Util.hpp"
 #include <iostream>
 #include <limits>
+#include <sstream>
 
 string stringTransform(const string& str, charFunc func) {
   string res = str;
@@ -27,6 +28,13 @@ string truncateColumn(const size_t size, const string& column) {
     return column;
 }
 
+string size_to_string(const size_t size)
+{
+  std::ostringstream stream;
+  stream << size;
+  return stream.str();
+}
+
 command parseCommand(const string& str) {
   const string parsed = stringTransform(trim(str), std::toupper);
 
@@ -40,7 +48,7 @@ command parseCommand(const string& str) {
     return INVALID;
 }
 
-void clearBuffer() {
+void clearCin() {
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

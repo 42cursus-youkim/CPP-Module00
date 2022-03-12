@@ -17,6 +17,7 @@ typedef enum e_command {
 string trim(const string& str);
 string stringTransform(const string& str, charFunc func);
 string truncateColumn(const size_t size, const string& column);
+string size_to_string(const size_t size);
 command parseCommand(const string& str);
-void  clearBuffer();
+void  clearCin();
 #endif  // __UTIL_H__

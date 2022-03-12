@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
+#include <limits>
 #include "PhoneBook.hpp"
 #include "Util.hpp"
 
@@ -28,9 +29,10 @@ int main(void) {
           return (EXIT_FAILURE);
         else if (cin.fail()) {
           cout << "Invalid input\n";
+          clearCin();
           break;
         }
-        clearBuffer();
+        clearCin();
         try {
           book.getContactAt(index).print();
         } catch (std::out_of_range& e) {
