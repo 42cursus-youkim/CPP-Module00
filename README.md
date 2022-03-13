@@ -8,7 +8,7 @@
 
 ## tasks
 
-### ex00
+### ex00: Megaphone
 
 ```py
 from sys import argv
@@ -16,13 +16,13 @@ print("".join(argv[1:]).upper())
 ```
 but in c++
 
-### ex01
+### ex01: My Awesome PhoneBook
 
 > Welcome to the 80s and its unbelievable technology! Write a program that behaves like a crappy awesome phonebook software.
 
 *HAYO*
 
-### ex02
+### ex02: The Job Of Your Dreams
 
 > you need to create a Account.cpp file and quickly write some lines of pure awesome C++
 
