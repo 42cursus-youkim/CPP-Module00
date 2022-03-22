@@ -7,6 +7,25 @@ using std::cout;
 
 const size_t NUM_ELEMENTS = 5;
 
+// constructor
+Contact::Contact()
+    : m_firstName(""),
+      m_lastName(""),
+      m_nickname(""),
+      m_phoneNumber(""),
+      m_darkestSecret("") {}
+
+Contact::Contact(const string& firstName,
+                 const string& lastName,
+                 const string& nickname,
+                 const string& phoneNumber,
+                 const string& darkestSecret)
+    : m_firstName(firstName),
+      m_lastName(lastName),
+      m_nickname(nickname),
+      m_phoneNumber(phoneNumber),
+      m_darkestSecret(darkestSecret) {}
+
 bool Contact::isValid() const {
   return !m_firstName.empty() && !m_lastName.empty() && !m_nickname.empty() &&
          !m_phoneNumber.empty() && !m_darkestSecret.empty();
@@ -36,17 +55,4 @@ const string& Contact::getPhoneNumber() const {
 }
 const string& Contact::getDarkestSecret() const {
   return m_darkestSecret;
-}
-
-// setters
-void Contact::setAll(const string& firstName,
-                     const string& lastName,
-                     const string& nickname,
-                     const string& phoneNumber,
-                     const string& darkestSecret) {
-  m_firstName = firstName;
-  m_lastName = lastName;
-  m_nickname = nickname;
-  m_phoneNumber = phoneNumber;
-  m_darkestSecret = darkestSecret;
 }

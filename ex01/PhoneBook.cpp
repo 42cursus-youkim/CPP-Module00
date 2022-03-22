@@ -35,8 +35,7 @@ void PhoneBook::addContactFromInput() {
   for (int i = 0; i < 5; i++)
     getNonEmptyLine(names[i], tmp[i]);
 
-  Contact entry;
-  entry.setAll(tmp[0], tmp[1], tmp[2], tmp[3], tmp[4]);
+  Contact entry(tmp[0], tmp[1], tmp[2], tmp[3], tmp[4]);
   addContact(entry);
 }
 

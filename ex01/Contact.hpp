@@ -18,6 +18,13 @@ class Contact {
   string m_darkestSecret;
 
  public:
+  Contact();
+  Contact(const string& firstName,
+          const string& lastName,
+          const string& nickname,
+          const string& phoneNumber,
+          const string& darkestSecret);
+
   bool isValid() const;
   void print() const;
 
@@ -27,11 +34,6 @@ class Contact {
   const string& getNickname() const;
   const string& getPhoneNumber() const;
   const string& getDarkestSecret() const;
-  void setAll(const string& firstName,
-              const string& lastName,
-              const string& nickname,
-              const string& phoneNumber,
-              const string& darkestSecret);
 };
 
 #endif  // __CONTACT_H__
