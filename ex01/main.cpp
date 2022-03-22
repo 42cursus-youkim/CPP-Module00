@@ -12,7 +12,7 @@ int main(void) {
   string line;
 
   while (true) {
-    cout << "Enter a command: ADD | SEARCH | QUIT\n";
+    cout << "Enter a command: ADD | SEARCH | EXIT\n";
     if (not getline(cin, line))
       return EXIT_SUCCESS;
     const command cmd = parseCommand(line);
@@ -42,7 +42,7 @@ int main(void) {
           cout << "No contact at this index\n";
         }
         break;
-      case QUIT:
+      case EXIT:
         return EXIT_SUCCESS;
       default:
         break;

@@ -42,8 +42,8 @@ command parseCommand(const string& str) {
     return ADD;
   else if (parsed == "SEARCH")
     return SEARCH;
-  else if (parsed == "QUIT")
-    return QUIT;
+  else if (parsed == "EXIT")
+    return EXIT;
   else
     return INVALID;
 }
