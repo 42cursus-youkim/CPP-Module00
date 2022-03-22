@@ -31,13 +31,12 @@ static void getNonEmptyLine(const string& prompt, string& line) {
 }
 
 void PhoneBook::addContactFromInput() {
-  Contact entry;
-  getNonEmptyLine("First Name", entry.m_firstName);
-  getNonEmptyLine("Last Name", entry.m_lastName);
-  getNonEmptyLine("Nickname", entry.m_nickname);
-  getNonEmptyLine("Phone Number", entry.m_phoneNumber);
-  getNonEmptyLine("Darkest Secret", entry.m_darkestSecret);
+  string tmp[5];
+  for (int i = 0; i < 5; i++)
+    getNonEmptyLine(names[i], tmp[i]);
 
+  Contact entry;
+  entry.setAll(tmp[0], tmp[1], tmp[2], tmp[3], tmp[4]);
   addContact(entry);
 }
 
@@ -70,8 +69,8 @@ void PhoneBook::printCellLast(const string& cell) const {
 }
 
 void PhoneBook::printRow(const size_t index, const Contact& contact) const {
-  const string columns[] = {contact.m_firstName, contact.m_lastName,
-                            contact.m_nickname};
+  const string columns[] = {contact.getFirstName(), contact.getLastName(),
+                            contact.getNickname()};
   printCell(size_to_string(index));
   for (size_t i = 0; i < NUM_COLUMNS - 1; i++)
     printCell(columns[i]);

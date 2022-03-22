@@ -20,3 +20,33 @@ void Contact::print() const {
   for (size_t i = 0; i < NUM_ELEMENTS; i++)
     cout << names[i] << ": " << arr[i] << "\n";
 }
+
+// getters
+const string& Contact::getFirstName() const {
+  return m_firstName;
+}
+const string& Contact::getLastName() const {
+  return m_lastName;
+}
+const string& Contact::getNickname() const {
+  return m_nickname;
+}
+const string& Contact::getPhoneNumber() const {
+  return m_phoneNumber;
+}
+const string& Contact::getDarkestSecret() const {
+  return m_darkestSecret;
+}
+
+// setters
+void Contact::setAll(const string& firstName,
+                     const string& lastName,
+                     const string& nickname,
+                     const string& phoneNumber,
+                     const string& darkestSecret) {
+  m_firstName = firstName;
+  m_lastName = lastName;
+  m_nickname = nickname;
+  m_phoneNumber = phoneNumber;
+  m_darkestSecret = darkestSecret;
+}

@@ -10,15 +10,28 @@ const string names[] = {"First Name", "Last Name", "Nickname", "Phone Number",
                         "Darkest Secret"};
 
 class Contact {
- public:
+ private:
   string m_firstName;
   string m_lastName;
   string m_nickname;
   string m_phoneNumber;
   string m_darkestSecret;
 
+ public:
   bool isValid() const;
   void print() const;
+
+  // meaningless getters and setters
+  const string& getFirstName() const;
+  const string& getLastName() const;
+  const string& getNickname() const;
+  const string& getPhoneNumber() const;
+  const string& getDarkestSecret() const;
+  void setAll(const string& firstName,
+              const string& lastName,
+              const string& nickname,
+              const string& phoneNumber,
+              const string& darkestSecret);
 };
 
 #endif  // __CONTACT_H__
