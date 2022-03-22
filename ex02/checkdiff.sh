@@ -10,7 +10,7 @@ make
 createDiff 19920104_091532.log > diff_org.txt
 createDiff my.log > diff_my.txt
 
-diff --color diff_org.txt diff_my.txt > tmp.txt
+diff diff_org.txt diff_my.txt > tmp.txt
 if [[ -s tmp.txt ]]; then
   echo "there is diff"
   cat tmp.txt
