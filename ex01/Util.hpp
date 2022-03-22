@@ -10,7 +10,7 @@ typedef int (*charFunc)(int);
 typedef enum e_command {
   ADD,
   SEARCH,
-  QUIT,
+  EXIT,
   INVALID,
 } command;
 

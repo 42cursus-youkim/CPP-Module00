@@ -28,8 +28,7 @@ string truncateColumn(const size_t size, const string& column) {
     return column;
 }
 
-string size_to_string(const size_t size)
-{
+string size_to_string(const size_t size) {
   std::ostringstream stream;
   stream << size;
   return stream.str();
@@ -42,8 +41,8 @@ command parseCommand(const string& str) {
     return ADD;
   else if (parsed == "SEARCH")
     return SEARCH;
-  else if (parsed == "QUIT")
-    return QUIT;
+  else if (parsed == "EXIT")
+    return EXIT;
   else
     return INVALID;
 }
