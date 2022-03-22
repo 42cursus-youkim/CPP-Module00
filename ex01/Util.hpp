@@ -7,12 +7,12 @@ using std::string;
 
 typedef int (*charFunc)(int);
 
-typedef enum e_command {
+enum command {
   ADD,
   SEARCH,
   EXIT,
   INVALID,
-} command;
+};
 
 string trim(const string& str);
 string stringTransform(const string& str, charFunc func);
